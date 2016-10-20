@@ -1,0 +1,34 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "c1aafbf1-a0fa-0c4c-898d-c6b95c519970++948+++60FB594" : {
+
+    },
+    "c1aafbf1-a0fa-0c4c-898d-c6b95c519970++1057+++C4170EB" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "c1aafbf1-a0fa-0c4c-898d-c6b95c519970++948+++60FB594" : 0,
+    "c1aafbf1-a0fa-0c4c-898d-c6b95c519970++1057+++C4170EB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "08FA8D00-30B6-4F78-8F47-AE86BA45E50F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "c1aafbf1-a0fa-0c4c-898d-c6b95c519970++948+++60FB594" : "Jambro\/Jambro\/ServiceModel\/",
+    "c1aafbf1-a0fa-0c4c-898d-c6b95c519970++1057+++C4170EB" : "Jambro\/Jambro\/ServiceModel\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Jambro",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Jambro.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/xdbsrv07.axact.com:81\/svn\/420SinglesiPhone",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c1aafbf1-a0fa-0c4c-898d-c6b95c519970++1057+++C4170EB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/xdbsrv07.axact.com:81\/svn\/420SinglesiPhone",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c1aafbf1-a0fa-0c4c-898d-c6b95c519970++948+++60FB594"
+    }
+  ]
+}

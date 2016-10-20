@@ -1,0 +1,346 @@
+[
+  {
+    "looking": [
+      {
+        "color": "#39BD95",
+        "sound": "guitar.wav",
+        "selected": "1",
+        "name": "Guitar",
+        "id": "0"
+      },
+      {
+        "color": "#9D5789",
+        "sound": "drums.wav",
+        "selected": "1",
+        "name": "Drums",
+        "id": "1"
+      },
+      {
+        "color": "#AA9F8F",
+        "sound": "bass.wav",
+        "selected": "1",
+        "name": "Bass",
+        "id": "2"
+      },
+      {
+        "color": "#854030",
+        "sound": "keyboard.wav",
+        "selected": "0",
+        "name": "Keyboard",
+        "id": "3"
+      },
+      {
+        "color": "#505068",
+        "sound": "vocals.wav",
+        "selected": "0",
+        "name": "Vocals",
+        "id": "4"
+      },
+      {
+        "color": "#5EB3DD",
+        "sound": "flute.wav",
+        "selected": "0",
+        "name": "Flute",
+        "id": "5"
+      },
+      {
+        "color": "#E56846",
+        "sound": "percussion.wav",
+        "selected": "0",
+        "name": "Percussion",
+        "id": "6"
+      },
+      {
+        "color": "#6B8BA5",
+        "sound": "piano.wav",
+        "selected": "0",
+        "name": "Piano",
+        "id": "7"
+      },
+      {
+        "color": "#ABC14D",
+        "sound": "violin.wav",
+        "selected": "0",
+        "name": "Violin",
+        "id": "8"
+      },
+      {
+        "color": "#DD8597",
+        "sound": "saxophone.wav",
+        "selected": "0",
+        "name": "Saxophone",
+        "id": "9"
+      },
+      {
+        "color": "#65704D",
+        "sound": "tabla.wav",
+        "selected": "0",
+        "name": "Tabla",
+        "id": "10"
+      },
+      {
+        "color": "#D462B9",
+        "sound": "hamonium.wav",
+        "selected": "0",
+        "name": "Harmonium",
+        "id": "11"
+      },
+      {
+        "color": "#204496",
+        "sound": "harmonica.wav",
+        "selected": "0",
+        "name": "Harmonica",
+        "id": "12"
+      },
+      {
+        "color": "#8D90B2",
+        "sound": "strings.wav",
+        "selected": "0",
+        "name": "Strings",
+        "id": "13"
+      },
+      {
+        "color": "#1F8989",
+        "sound": "eastern.mp3",
+        "selected": "0",
+        "name": "Eastern",
+        "id": "14"
+      },
+      {
+        "color": "#FF9999",
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "Other",
+        "id": "15"
+      }
+    ],
+    "listen": [
+      {
+        "color": "",
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "0"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "1"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "2"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "3"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "4"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "5"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "6"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "7"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "8"
+      },
+      {
+        "color":,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "9"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "10"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "11"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "12"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "13"
+      },
+      {
+        "color": ,
+        "sound": "eastern.mp3",
+        "selected": "0",
+        "name": "",
+        "id": "14"
+      },
+      {
+        "color": ,
+        "sound": "click.wav",
+        "selected": "0",
+        "name": "",
+        "id": "15"
+      }
+    ],
+    "play": [
+             {
+             "color": "",
+             "sound": "",
+             "selected": "0",
+             "name": "",
+             "id": "0"
+             },
+             {
+             "color": "",
+             "sound": "",
+             "selected": "0",
+             "name": "",
+             "id": "1"
+             },
+             {
+             "color": "",
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "2"
+             },
+             {
+             "color": "",
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "3"
+             },
+             {
+             "color": "",
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "4"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "5"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "6"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "7"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "8"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "9"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "10"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "11"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "12"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "13"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "14"
+             },
+             {
+             "color": ,
+             "sound": ,
+             "selected": "0",
+             "name": "",
+             "id": "15"
+             }
+    ]
+  }
+]

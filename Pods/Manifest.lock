@@ -1,0 +1,91 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - ALMoviePlayerController (0.3.0)
+  - DACircularProgress (2.3.1)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - MBProgressHUD (1.0.0)
+  - MJPopupViewController (0.4)
+  - MTDates (1.0.3)
+  - MWPhotoBrowser (1.3.1):
+    - DACircularProgress
+    - MBProgressHUD
+    - PSTCollectionView (~> 1.2)
+    - SDWebImage (~> 3.5.4)
+  - NMRangeSlider (1.2.1)
+  - PSTCollectionView (1.2.3)
+  - RMMapper (1.1.5)
+  - SDWebImage (3.5.4):
+    - SDWebImage/Core (= 3.5.4)
+  - SDWebImage/Core (3.5.4)
+  - socket.IO (0.5.2):
+    - SocketRocket (~> 0.2)
+  - SocketRocket (0.5.1)
+  - SplunkMint-iOS (4.2)
+  - UIAlertView+Blocks (0.9)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0
+  - AFNetworking (~> 2.5)
+  - ALMoviePlayerController (~> 0.3.0)
+  - JSQMessagesViewController
+  - MagicalRecord
+  - MBProgressHUD
+  - MJPopupViewController
+  - MTDates
+  - MWPhotoBrowser
+  - NMRangeSlider
+  - RMMapper
+  - socket.IO
+  - SplunkMint-iOS
+  - UIAlertView+Blocks
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  ALMoviePlayerController: caf8e2b455e576f704895882b7c1688686b40b0c
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
+  MTDates: c65affdfb7b34001c5c9e3fe0beac4b1b8334a58
+  MWPhotoBrowser: 21c403da4f44043e0cd2cd27a6fd30a7f4c431c1
+  NMRangeSlider: 317ded652431eb90501c8421d9cddc3930d891e6
+  PSTCollectionView: 6749df92885353521f55279a7ce2b293762e2be4
+  RMMapper: 21122d753c736d975f6c61e674afce8db73579af
+  SDWebImage: 32ca144928625f9a04d561115028cf6db3aa7b63
+  socket.IO: eaaaea33481d8a81d8f78e331f0c72ba44758036
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SplunkMint-iOS: 058e5297f7cc8d335aea3dcaa8111eeb0f657371
+  UIAlertView+Blocks: a46c99c5144f6c5dbc7d62fd2a0678daceec89a3
+
+PODFILE CHECKSUM: db1773f63f39a9e36922e902a8e017627b6b4c28
+
+COCOAPODS: 1.0.1
