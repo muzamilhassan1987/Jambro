@@ -9,6 +9,12 @@
 #import "HomeViewController.h"
 
 @interface HomeViewController ()
+{
+    CGRect playCollectionViewFrame;
+    CGRect listenCollectionViewFrame;
+}
+@property (weak, nonatomic) IBOutlet UICollectionView *playCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *listenCollectionView;
 
 @end
 
@@ -19,10 +25,50 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    if (CGRectEqualToRect(CGRectZero, playCollectionViewFrame)) {
+        playCollectionViewFrame = self.playCollectionView.frame;
+    }
+    
+    if (CGRectEqualToRect(CGRectZero, listenCollectionViewFrame)) {
+        listenCollectionViewFrame = self.listenCollectionView.frame;
+    }
+}
+
+
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    
+    UICollectionViewFlowLayout *playFlowLayout = (id)self.playCollectionView.collectionViewLayout;
+    CGFloat playScreenWidth = playCollectionViewFrame.size.width;
+    float playCellWidth = playScreenWidth / 4.0 - 10; //Replace the divisor with the column count requirement. Make sure to have it in float.
+    CGSize playSize = CGSizeMake(playCellWidth, playCellWidth);
+    playFlowLayout.itemSize = playSize;
+    [playFlowLayout invalidateLayout];
+    
+    
+    UICollectionViewFlowLayout *listenFlowLayout = (id)self.listenCollectionView.collectionViewLayout;
+    CGFloat listenScreenWidth = listenCollectionViewFrame.size.width;
+    float listenCellWidth = listenScreenWidth / 4.0 - 10; //Replace the divisor with the column count requirement. Make sure to have it in float.
+    CGSize listenSize = CGSizeMake(listenCellWidth, listenCellWidth);
+    listenFlowLayout.itemSize = listenSize;
+    [listenFlowLayout invalidateLayout];
+    
+    
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

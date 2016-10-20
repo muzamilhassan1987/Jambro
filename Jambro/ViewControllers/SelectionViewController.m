@@ -25,7 +25,7 @@ alpha:1.0]
 
 @interface SelectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
-        CGRect collectionViewFrame;
+    CGRect collectionViewFrame;
     int indexOfPage;
     Selection *selection;
 }
