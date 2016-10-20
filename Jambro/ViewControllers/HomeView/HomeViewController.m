@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "SelectionCollectionViewCell.h"
 
 @interface HomeViewController ()
 {
@@ -32,9 +33,9 @@
         playCollectionViewFrame = self.playCollectionView.frame;
     }
     
-    if (CGRectEqualToRect(CGRectZero, listenCollectionViewFrame)) {
-        listenCollectionViewFrame = self.listenCollectionView.frame;
-    }
+//    if (CGRectEqualToRect(CGRectZero, listenCollectionViewFrame)) {
+//        listenCollectionViewFrame = self.listenCollectionView.frame;
+//    }
 }
 
 
@@ -51,16 +52,84 @@
     [playFlowLayout invalidateLayout];
     
     
-    UICollectionViewFlowLayout *listenFlowLayout = (id)self.listenCollectionView.collectionViewLayout;
-    CGFloat listenScreenWidth = listenCollectionViewFrame.size.width;
-    float listenCellWidth = listenScreenWidth / 4.0 - 10; //Replace the divisor with the column count requirement. Make sure to have it in float.
-    CGSize listenSize = CGSizeMake(listenCellWidth, listenCellWidth);
-    listenFlowLayout.itemSize = listenSize;
-    [listenFlowLayout invalidateLayout];
+//    UICollectionViewFlowLayout *listenFlowLayout = (id)self.listenCollectionView.collectionViewLayout;
+//    CGFloat listenScreenWidth = listenCollectionViewFrame.size.width;
+//    float listenCellWidth = listenScreenWidth / 4.0 - 10; //Replace the divisor with the column count requirement. Make sure to have it in float.
+//    CGSize listenSize = CGSizeMake(listenCellWidth, listenCellWidth);
+//    listenFlowLayout.itemSize = listenSize;
+//    [listenFlowLayout invalidateLayout];
     
     
 }
 
+
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+    if (view == _playCollectionView) {
+        return 5;
+    }
+    else
+    {
+        return 3;
+    }
+    
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (collectionView == self.playCollectionView) {
+        SelectionCollectionViewCell *playCV= (SelectionCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"SelectionCell" forIndexPath:indexPath];
+      playCV.bgView.backgroundColor = [UIColor clearColor];
+      playCV.bgView.alpha = 1.0;
+      playCV.bgView.layer.cornerRadius = playCV.bounds.size.width/2;
+      playCV.bgView.layer.borderWidth = 1.0f;
+      playCV.bgView.layer.borderColor = [UIColor blackColor].CGColor;
+      playCV.bgView.layer.masksToBounds = YES;
+      playCV.bgView.clipsToBounds = YES;
+      
+//      if ([playObject.selected boolValue]) {
+//          UIColor * color = [self colorFromHexString:playObject.color];
+//          playCV.bgView.backgroundColor = color;
+//          playCV.bgView.alpha = 0.8;
+//      }
+      
+      playCV.nameLabel.text = @"play";
+      playCV.nameLabel.textColor = [UIColor blackColor];
+      
+      return playCV;
+  }
+    else
+    {
+        SelectionCollectionViewCell *listenCV= (SelectionCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"SelectionCell" forIndexPath:indexPath];
+        listenCV.bgView.backgroundColor = [UIColor clearColor];
+        listenCV.bgView.alpha = 1.0;
+        listenCV.bgView.layer.cornerRadius = listenCV.bounds.size.width/2;
+        listenCV.bgView.layer.borderWidth = 1.0f;
+        listenCV.bgView.layer.borderColor = [UIColor blackColor].CGColor;
+        listenCV.bgView.layer.masksToBounds = YES;
+        listenCV.bgView.clipsToBounds = YES;
+        
+        //      if ([playObject.selected boolValue]) {
+        //          UIColor * color = [self colorFromHexString:playObject.color];
+        //          playCV.bgView.backgroundColor = color;
+        //          playCV.bgView.alpha = 0.8;
+        //      }
+        
+        listenCV.nameLabel.text = @"listen";
+        listenCV.nameLabel.textColor = [UIColor blackColor];
+        return listenCV;
+    }
+    
+}
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat screenWidth =playCollectionViewFrame.size.width;
+    float cellWidth = screenWidth / 4.0 - 10; //Replace the divisor with the column count requirement. Make sure to have it in float.
+    CGSize size = CGSizeMake(cellWidth, cellWidth);
+    
+    return size;
+}
 
 
 - (void)didReceiveMemoryWarning {

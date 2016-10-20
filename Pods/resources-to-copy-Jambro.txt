@@ -1,0 +1,17 @@
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieBackward.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieBackward@2x.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieBackwardSelected.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieBackwardSelected@2x.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieEndFullscreen.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieEndFullscreen@2x.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieForward.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieForward@2x.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieForwardSelected.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieForwardSelected@2x.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieFullscreen.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/movieFullscreen@2x.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/moviePause.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/moviePause@2x.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/moviePlay.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/ALMoviePlayerController/ALMoviePlayerController/Images/moviePlay@2x.png
+/Users/Faraz/Desktop/Freelance/Jambro/Pods/JSQMessagesViewController/JSQMessagesViewController/Assets/JSQMessagesAssets.bundle
