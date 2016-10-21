@@ -28,19 +28,6 @@
 
 
 @interface Constants : NSObject
-extern  NSString *const kFBCommentPostPath;
-extern  NSString *const kFBCommentPostQuery;
-extern  NSString *const kFBFeedPath;
-extern  NSString *const kFBFeedQuery;
-extern  NSString *const kFbCommentLike;
-extern  NSString *const kFbCommentPath;
-extern  NSString *const kFbFriends;
-extern  NSString *const kFbGraphPath;
-extern  NSString *const kFbPicturePath;
-
 extern  NSString *const kWebBaseUrl;
-extern  NSString *const kWebImageBaseUrl;
-extern  NSString *const kWebFriendRequest;
-extern  NSString *const kWebAcceptFriendRequest;
-extern  NSString *const kWebCancelFriendRequest;
+extern NSString *const kWebRegister;
 @end

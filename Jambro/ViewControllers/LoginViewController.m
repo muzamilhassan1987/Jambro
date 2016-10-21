@@ -9,6 +9,12 @@
 #import "LoginViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "User.h"
+#import "UserConcreate.h"
+#import "UserModel.h"
+#import "Constants.h"
+#import "AppDelegate.h"
+#import "UtilitiesHelper.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *fbLoginButton;
@@ -48,15 +54,52 @@
 
 -(void)getUserInfo
 {
-    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
-     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+    [parameters setValue:@"id,name,email,picture,gender" forKey:@"fields"];
+    
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                  id result, NSError *error) {
+         
+         NSString *myEmail = result[@"email"];
+         NSString *myGender = result[@"gender"];
+         
          
          if (!error) {
              NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
              
              NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=normal",result[@"id"]]];
-             NSData  *data = [NSData dataWithContentsOfURL:url];
+             //             NSData  *data = [NSData dataWithContentsOfURL:url];
              
+             NSString *deviceToken = [UserModel getUserDeviceToken];
+             
+             [User registerUser:@{@"email":(myEmail?myEmail:@"xxx@xxx.com"),
+                                  @"facebookid":result[@"id"],
+                                  @"userDeviceToken":(deviceToken?deviceToken:@"abc123"),
+                                  @"name":result[@"name"],
+                                  @"play":@"",
+                                  @"listen":@"",
+                                  @"lookfor":@"",
+                                  @"bio":@"",
+                                  @"lat":@"",
+                                  @"lon":@"",
+                                  @"picture":[NSString stringWithFormat:@"%@",url.absoluteString],
+                                  @"gender":(myGender?myGender:@"male"),
+                                  @"age":@"",
+                                  }
+
+                     withURLStr:kWebRegister onView:self.view response:^(User *objUser, NSError *error) {
+                         
+                         
+                         if (objUser) {
+                             [[UserModel sharedInstance] saveUserInfo:objUser.user];
+                             AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                             [appdelegate makeHomeRootView];
+                         }
+                         else {
+                             [UtilitiesHelper showErrorAlert:error];
+                         }
+                     }];
          }
      }];
 }
@@ -81,13 +124,13 @@
 //
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

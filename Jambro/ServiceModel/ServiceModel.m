@@ -41,7 +41,7 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
        // NSLog(@"response object ====> %@",responseObject);
 
-        if ([[responseObject valueForKey:@"Response"]isEqualToString:@"Success"]) {
+        if ([[NSString stringWithFormat:@"%@",[responseObject valueForKey:@"status"]]isEqualToString:@"1"]) {
             [UtilitiesHelper hideLoader:loaderOnView];
             success(operation,responseObject);
 

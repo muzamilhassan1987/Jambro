@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "UserModel.h"
 //cccc
 
 @interface AppDelegate ()
@@ -42,7 +43,7 @@
     UIStoryboard* storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
 
     
-    if (1)
+    if ([[UserModel sharedInstance] checkUserData])
     {
         UINavigationController* navController=[storyboard instantiateViewControllerWithIdentifier:@"SelectionNavigation"];
         self.window.rootViewController=navController;

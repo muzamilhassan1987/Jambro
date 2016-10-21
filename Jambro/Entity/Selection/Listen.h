@@ -7,7 +7,6 @@
     NSString *name;
     NSString *selected;
     NSString *sound;
-
 }
 
 @property (nonatomic, copy) NSString *color;

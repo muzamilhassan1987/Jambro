@@ -24,6 +24,12 @@
 		D0282F2E1DB4D32400EDDA57 /* violin.wav in Resources */ = {isa = PBXBuildFile; fileRef = D0282F1C1DB4D32400EDDA57 /* violin.wav */; };
 		D0282F2F1DB4D32400EDDA57 /* vocals.wav in Resources */ = {isa = PBXBuildFile; fileRef = D0282F1D1DB4D32400EDDA57 /* vocals.wav */; };
 		D0282F301DB4D32400EDDA57 /* splash.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D0282F1F1DB4D32400EDDA57 /* splash.mp4 */; };
+		D04F4BFA1DBA39D3008CD903 /* Listen.m in Sources */ = {isa = PBXBuildFile; fileRef = D04F4BF31DBA39D3008CD903 /* Listen.m */; };
+		D04F4BFB1DBA39D3008CD903 /* Looking.m in Sources */ = {isa = PBXBuildFile; fileRef = D04F4BF51DBA39D3008CD903 /* Looking.m */; };
+		D04F4BFC1DBA39D3008CD903 /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = D04F4BF71DBA39D3008CD903 /* Play.m */; };
+		D04F4BFD1DBA39D3008CD903 /* Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = D04F4BF91DBA39D3008CD903 /* Selection.m */; };
+		D04F4C031DBA3B88008CD903 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D04F4C001DBA3B88008CD903 /* User.m */; };
+		D04F4C041DBA3B88008CD903 /* UserConcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = D04F4C021DBA3B88008CD903 /* UserConcreate.m */; };
 		D0510FD71DB2CDFE005F0B9A /* Selection.json in Resources */ = {isa = PBXBuildFile; fileRef = D0510FD61DB2CDFE005F0B9A /* Selection.json */; };
 		D0510FF11DB2CF02005F0B9A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0510FDB1DB2CF02005F0B9A /* HomeViewController.m */; };
 		D0510FF21DB2CF02005F0B9A /* MatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0510FDE1DB2CF02005F0B9A /* MatchesViewController.m */; };
@@ -66,9 +72,7 @@
 		D051106F1DB39C82005F0B9A /* UIViewController+Utils_h.m in Sources */ = {isa = PBXBuildFile; fileRef = D051104D1DB39C82005F0B9A /* UIViewController+Utils_h.m */; };
 		D05110701DB39C82005F0B9A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D051104F1DB39C82005F0B9A /* UserModel.m */; };
 		D05110711DB39C82005F0B9A /* UtilitiesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D05110511DB39C82005F0B9A /* UtilitiesHelper.m */; };
-		D05110721DB39C82005F0B9A /* WKSocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = D05110531DB39C82005F0B9A /* WKSocialSharing.m */; };
 		D05110761DB39C8A005F0B9A /* ServiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D05110751DB39C8A005F0B9A /* ServiceModel.m */; };
-		D05110791DB39CA6005F0B9A /* UserConcrete.m in Sources */ = {isa = PBXBuildFile; fileRef = D05110781DB39CA6005F0B9A /* UserConcrete.m */; };
 		D08AD8E51DB608F5003D4E01 /* BiosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08AD8E41DB608F5003D4E01 /* BiosViewController.m */; };
 		D08AD8E81DB60C9E003D4E01 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08AD8E71DB60C9E003D4E01 /* LoginViewController.m */; };
 		D08AD8FD1DB646CA003D4E01 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08AD8F91DB646CA003D4E01 /* Bolts.framework */; };
@@ -82,10 +86,6 @@
 		D0EDA4391DB1017300BA1914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA4371DB1017300BA1914 /* Main.storyboard */; };
 		D0EDA43B1DB1017300BA1914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA43A1DB1017300BA1914 /* Assets.xcassets */; };
 		D0EDA43E1DB1017300BA1914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA43C1DB1017300BA1914 /* LaunchScreen.storyboard */; };
-		D0FA12D01DB7E10900BD96B2 /* Listen.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FA12C91DB7E10900BD96B2 /* Listen.m */; };
-		D0FA12D11DB7E10900BD96B2 /* Looking.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FA12CB1DB7E10900BD96B2 /* Looking.m */; };
-		D0FA12D21DB7E10900BD96B2 /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FA12CD1DB7E10900BD96B2 /* Play.m */; };
-		D0FA12D31DB7E10900BD96B2 /* Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FA12CF1DB7E10900BD96B2 /* Selection.m */; };
 		D74726603D46E7001E5E119C /* libPods-Jambro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8869E56055A91E8CCFF1027B /* libPods-Jambro.a */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +112,18 @@
 		D0282F1C1DB4D32400EDDA57 /* violin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = violin.wav; sourceTree = "<group>"; };
 		D0282F1D1DB4D32400EDDA57 /* vocals.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = vocals.wav; sourceTree = "<group>"; };
 		D0282F1F1DB4D32400EDDA57 /* splash.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash.mp4; sourceTree = "<group>"; };
+		D04F4BF21DBA39D3008CD903 /* Listen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Listen.h; sourceTree = "<group>"; };
+		D04F4BF31DBA39D3008CD903 /* Listen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Listen.m; sourceTree = "<group>"; };
+		D04F4BF41DBA39D3008CD903 /* Looking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Looking.h; sourceTree = "<group>"; };
+		D04F4BF51DBA39D3008CD903 /* Looking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Looking.m; sourceTree = "<group>"; };
+		D04F4BF61DBA39D3008CD903 /* Play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Play.h; sourceTree = "<group>"; };
+		D04F4BF71DBA39D3008CD903 /* Play.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Play.m; sourceTree = "<group>"; };
+		D04F4BF81DBA39D3008CD903 /* Selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selection.h; sourceTree = "<group>"; };
+		D04F4BF91DBA39D3008CD903 /* Selection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selection.m; sourceTree = "<group>"; };
+		D04F4BFF1DBA3B88008CD903 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D04F4C001DBA3B88008CD903 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D04F4C011DBA3B88008CD903 /* UserConcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserConcreate.h; sourceTree = "<group>"; };
+		D04F4C021DBA3B88008CD903 /* UserConcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserConcreate.m; sourceTree = "<group>"; };
 		D0510FD61DB2CDFE005F0B9A /* Selection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Selection.json; sourceTree = "<group>"; };
 		D0510FDA1DB2CF02005F0B9A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D0510FDB1DB2CF02005F0B9A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -195,12 +207,8 @@
 		D051104F1DB39C82005F0B9A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		D05110501DB39C82005F0B9A /* UtilitiesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilitiesHelper.h; sourceTree = "<group>"; };
 		D05110511DB39C82005F0B9A /* UtilitiesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilitiesHelper.m; sourceTree = "<group>"; };
-		D05110521DB39C82005F0B9A /* WKSocialSharing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKSocialSharing.h; sourceTree = "<group>"; };
-		D05110531DB39C82005F0B9A /* WKSocialSharing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKSocialSharing.m; sourceTree = "<group>"; };
 		D05110741DB39C8A005F0B9A /* ServiceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceModel.h; sourceTree = "<group>"; };
 		D05110751DB39C8A005F0B9A /* ServiceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceModel.m; sourceTree = "<group>"; };
-		D05110771DB39CA6005F0B9A /* UserConcrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserConcrete.h; sourceTree = "<group>"; };
-		D05110781DB39CA6005F0B9A /* UserConcrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserConcrete.m; sourceTree = "<group>"; };
 		D08AD8E31DB608F5003D4E01 /* BiosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiosViewController.h; sourceTree = "<group>"; };
 		D08AD8E41DB608F5003D4E01 /* BiosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiosViewController.m; sourceTree = "<group>"; };
 		D08AD8E61DB60C9E003D4E01 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -221,14 +229,6 @@
 		D0EDA43A1DB1017300BA1914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0EDA43D1DB1017300BA1914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0EDA43F1DB1017300BA1914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0FA12C81DB7E10900BD96B2 /* Listen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Listen.h; sourceTree = "<group>"; };
-		D0FA12C91DB7E10900BD96B2 /* Listen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Listen.m; sourceTree = "<group>"; };
-		D0FA12CA1DB7E10900BD96B2 /* Looking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Looking.h; sourceTree = "<group>"; };
-		D0FA12CB1DB7E10900BD96B2 /* Looking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Looking.m; sourceTree = "<group>"; };
-		D0FA12CC1DB7E10900BD96B2 /* Play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Play.h; sourceTree = "<group>"; };
-		D0FA12CD1DB7E10900BD96B2 /* Play.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Play.m; sourceTree = "<group>"; };
-		D0FA12CE1DB7E10900BD96B2 /* Selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selection.h; sourceTree = "<group>"; };
-		D0FA12CF1DB7E10900BD96B2 /* Selection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +289,32 @@
 				D0282F1F1DB4D32400EDDA57 /* splash.mp4 */,
 			);
 			path = splash;
+			sourceTree = "<group>";
+		};
+		D04F4BF11DBA39D3008CD903 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				D04F4BF21DBA39D3008CD903 /* Listen.h */,
+				D04F4BF31DBA39D3008CD903 /* Listen.m */,
+				D04F4BF41DBA39D3008CD903 /* Looking.h */,
+				D04F4BF51DBA39D3008CD903 /* Looking.m */,
+				D04F4BF61DBA39D3008CD903 /* Play.h */,
+				D04F4BF71DBA39D3008CD903 /* Play.m */,
+				D04F4BF81DBA39D3008CD903 /* Selection.h */,
+				D04F4BF91DBA39D3008CD903 /* Selection.m */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
+		D04F4BFE1DBA3B88008CD903 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D04F4BFF1DBA3B88008CD903 /* User.h */,
+				D04F4C001DBA3B88008CD903 /* User.m */,
+				D04F4C011DBA3B88008CD903 /* UserConcreate.h */,
+				D04F4C021DBA3B88008CD903 /* UserConcreate.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		D0510FD81DB2CF02005F0B9A /* ViewControllers */ = {
@@ -357,16 +383,8 @@
 		D0510FFB1DB2CF11005F0B9A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				D05110771DB39CA6005F0B9A /* UserConcrete.h */,
-				D05110781DB39CA6005F0B9A /* UserConcrete.m */,
-				D0FA12C81DB7E10900BD96B2 /* Listen.h */,
-				D0FA12C91DB7E10900BD96B2 /* Listen.m */,
-				D0FA12CA1DB7E10900BD96B2 /* Looking.h */,
-				D0FA12CB1DB7E10900BD96B2 /* Looking.m */,
-				D0FA12CC1DB7E10900BD96B2 /* Play.h */,
-				D0FA12CD1DB7E10900BD96B2 /* Play.m */,
-				D0FA12CE1DB7E10900BD96B2 /* Selection.h */,
-				D0FA12CF1DB7E10900BD96B2 /* Selection.m */,
+				D04F4BFE1DBA3B88008CD903 /* User */,
+				D04F4BF11DBA39D3008CD903 /* Selection */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -405,8 +423,6 @@
 				D051104F1DB39C82005F0B9A /* UserModel.m */,
 				D05110501DB39C82005F0B9A /* UtilitiesHelper.h */,
 				D05110511DB39C82005F0B9A /* UtilitiesHelper.m */,
-				D05110521DB39C82005F0B9A /* WKSocialSharing.h */,
-				D05110531DB39C82005F0B9A /* WKSocialSharing.m */,
 			);
 			path = HelperClass;
 			sourceTree = "<group>";
@@ -766,10 +782,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04F4BFC1DBA39D3008CD903 /* Play.m in Sources */,
+				D04F4C041DBA3B88008CD903 /* UserConcreate.m in Sources */,
 				D05110581DB39C82005F0B9A /* IQKeyboardManager.m in Sources */,
 				D0BE30F21DB8B4E900F1864E /* SoundManager.m in Sources */,
 				D05110591DB39C82005F0B9A /* IQKeyboardReturnKeyHandler.m in Sources */,
-				D0FA12D01DB7E10900BD96B2 /* Listen.m in Sources */,
 				D05110701DB39C82005F0B9A /* UserModel.m in Sources */,
 				D05110651DB39C82005F0B9A /* NSDate+TCUtils.m in Sources */,
 				D0510FF91DB2CF02005F0B9A /* SelectionViewController.m in Sources */,
@@ -778,7 +795,6 @@
 				D05110571DB39C82005F0B9A /* IQUIWindow+Hierarchy.m in Sources */,
 				D08AD8E81DB60C9E003D4E01 /* LoginViewController.m in Sources */,
 				D0510FF31DB2CF02005F0B9A /* RequestViewController.m in Sources */,
-				D05110721DB39C82005F0B9A /* WKSocialSharing.m in Sources */,
 				D05110541DB39C82005F0B9A /* Constants.m in Sources */,
 				D051105F1DB39C82005F0B9A /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				D08AD8E51DB608F5003D4E01 /* BiosViewController.m in Sources */,
@@ -791,9 +807,11 @@
 				D051105A1DB39C82005F0B9A /* IQSegmentedNextPrevious.m in Sources */,
 				D05110711DB39C82005F0B9A /* UtilitiesHelper.m in Sources */,
 				D0EDA4301DB1017300BA1914 /* main.m in Sources */,
+				D04F4BFB1DBA39D3008CD903 /* Looking.m in Sources */,
 				D0510FF41DB2CF02005F0B9A /* FeedBackViewController.m in Sources */,
 				D05110681DB39C82005F0B9A /* UIButton+FontSize.m in Sources */,
 				D051106F1DB39C82005F0B9A /* UIViewController+Utils_h.m in Sources */,
+				D04F4BFA1DBA39D3008CD903 /* Listen.m in Sources */,
 				D0510FF61DB2CF02005F0B9A /* AboutUsViewController.m in Sources */,
 				D051105C1DB39C82005F0B9A /* IQBarButtonItem.m in Sources */,
 				D051105D1DB39C82005F0B9A /* IQTitleBarButtonItem.m in Sources */,
@@ -802,15 +820,13 @@
 				D05110691DB39C82005F0B9A /* UIImage+OrientationFixed.m in Sources */,
 				D051106E1DB39C82005F0B9A /* UITextView+FontSize.m in Sources */,
 				D0510FF21DB2CF02005F0B9A /* MatchesViewController.m in Sources */,
-				D0FA12D21DB7E10900BD96B2 /* Play.m in Sources */,
 				D05110621DB39C82005F0B9A /* MPNotificationView.m in Sources */,
-				D0FA12D31DB7E10900BD96B2 /* Selection.m in Sources */,
-				D0FA12D11DB7E10900BD96B2 /* Looking.m in Sources */,
-				D05110791DB39CA6005F0B9A /* UserConcrete.m in Sources */,
+				D04F4C031DBA3B88008CD903 /* User.m in Sources */,
 				D05110761DB39C8A005F0B9A /* ServiceModel.m in Sources */,
 				D05110661DB39C82005F0B9A /* Reachability.m in Sources */,
 				D0510FF11DB2CF02005F0B9A /* HomeViewController.m in Sources */,
 				D051105B1DB39C82005F0B9A /* IQTextView.m in Sources */,
+				D04F4BFD1DBA39D3008CD903 /* Selection.m in Sources */,
 				D0510FF81DB2CF02005F0B9A /* SettingViewController.m in Sources */,
 				D051106A1DB39C82005F0B9A /* UIImageView+ThumbImage.m in Sources */,
 				D08AD9161DB68DA5003D4E01 /* SelectionCollectionViewCell.m in Sources */,

@@ -16,6 +16,7 @@
 #import "Selection.h"
 #import "SelectionCollectionViewCell.h"
 #import "SoundManager.h"
+#import "UserModel.h"
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -42,13 +43,17 @@ alpha:1.0]
     
     [[SoundManager sharedManager] prepareToPlay];
     
+    if ([[UserModel sharedInstance] checkUserData]){
     if ([UtilitiesHelper getUserDefaultForKey:@"Selection"]) {
         
         NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
         selection = [defaults rm_customObjectForKey:@"Selection"];
-        
-    }else{
-        [self setSelectionData];
+        }
+    }
+    else{
+           [self setSelectionData];
+    }
+     
         
 //    NSMutableArray *selectionArray =[self getJsonDataFromFile];
 //    
@@ -58,7 +63,7 @@ alpha:1.0]
 //    selection.play = [[selectionDictionary objectForKey:@"play"] mutableCopy];
 //    selection.looking = [[selectionDictionary objectForKey:@"looking"] mutableCopy];
 //    selection.listen = [[selectionDictionary objectForKey:@"listen"]mutableCopy ];
-    }
+//    }
     
     
     // Do any additional setup after loading the view.

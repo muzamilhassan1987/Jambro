@@ -41,17 +41,17 @@
     [userdefault synchronize];
 }
 
-//- (UserConcrete *)getUserData
-//{
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//    UserConcrete* user = [defaults rm_customObjectForKey:@"userinfo"];
-//    return user;
-//}
-//
-//- (void)saveUserInfo:(UserConcrete *)userinfo{
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults rm_setCustomObject:userinfo forKey:@"userinfo"];
-//}
+- (UserConcreate *)getUserData
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    UserConcreate* user = [defaults rm_customObjectForKey:@"userinfo"];
+    return user;
+}
+
+- (void)saveUserInfo:(UserConcreate *)userinfo{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults rm_setCustomObject:userinfo forKey:@"userinfo"];
+}
 
 +(void)saveDeviceToken:(NSString*)deviceToken{
     NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];

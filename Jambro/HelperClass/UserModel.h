@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "UserConcrete.h"
+#import "UserConcreate.h"
 
 @interface UserModel : NSObject
 
@@ -16,8 +16,8 @@
 
 - (BOOL)checkUserData;
 - (void)removeUserData;
-//- (UserConcrete *)getUserData;
-//- (void)saveUserInfo:(UserConcrete *)userinfo;
+- (UserConcreate *)getUserData;
+- (void)saveUserInfo:(UserConcreate *)userinfo;
 + (NSString*)getUserDeviceToken;
 +(void)saveDeviceToken:(NSString*)deviceToken;
 
