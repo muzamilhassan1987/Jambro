@@ -43,7 +43,7 @@
     UIStoryboard* storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
 
     
-    if ([[UserModel sharedInstance] checkUserData])
+    if (![[UserModel sharedInstance] checkUserData])
     {
         UINavigationController* navController=[storyboard instantiateViewControllerWithIdentifier:@"SelectionNavigation"];
         self.window.rootViewController=navController;
