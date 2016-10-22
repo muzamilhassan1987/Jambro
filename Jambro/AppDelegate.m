@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "UserModel.h"
+#import "HACLocationManager.h"
 //cccc
 
 @interface AppDelegate ()
@@ -72,6 +73,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
+    
+    
+    [[HACLocationManager sharedInstance]requestAuthorizationLocation];
+    
     return YES;
 }
 

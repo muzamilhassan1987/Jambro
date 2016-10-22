@@ -21,8 +21,8 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - ALMoviePlayerController (0.3.0)
   - DACircularProgress (2.3.1)
+  - HACLocationManager (1.0.3)
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -52,7 +52,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - AFNetworking (~> 2.5)
-  - ALMoviePlayerController (~> 0.3.0)
+  - HACLocationManager
   - JSQMessagesViewController
   - MagicalRecord
   - MBProgressHUD
@@ -68,8 +68,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  ALMoviePlayerController: caf8e2b455e576f704895882b7c1688686b40b0c
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  HACLocationManager: 47c3fad8712df896b578d0270f176ec71188d753
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
@@ -86,6 +86,6 @@ SPEC CHECKSUMS:
   SplunkMint-iOS: 058e5297f7cc8d335aea3dcaa8111eeb0f657371
   UIAlertView+Blocks: a46c99c5144f6c5dbc7d62fd2a0678daceec89a3
 
-PODFILE CHECKSUM: db1773f63f39a9e36922e902a8e017627b6b4c28
+PODFILE CHECKSUM: b53c8d849870e9a4cacf5a3840ff5c6cbe3008a2
 
 COCOAPODS: 1.0.1

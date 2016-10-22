@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4767CACE1E049C31C9565F6498F72E5D'
-               BlueprintName = 'ALMoviePlayerController'
+               BlueprintIdentifier = '824D12645CAF7B531B0C07FFFC800796'
+               BlueprintName = 'HACLocationManager'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libALMoviePlayerController.a'>
+               BuildableName = 'libHACLocationManager.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

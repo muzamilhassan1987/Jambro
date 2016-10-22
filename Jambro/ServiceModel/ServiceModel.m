@@ -578,11 +578,5 @@
         return nil;
 }
   
-//+ (AFHTTPRequestOperation *)getDetails:(void (^)(NSArray *posts, NSError *error))block
-//{
-//
-//
-//
-//}
 
 @end

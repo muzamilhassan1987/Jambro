@@ -20,5 +20,6 @@ pod 'socket.IO'
 pod 'NMRangeSlider'
 pod 'ActionSheetPicker-3.0'
 pod 'JSQMessagesViewController'
+pod 'HACLocationManager'
 
 end

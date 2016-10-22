@@ -20,9 +20,13 @@
 #import "Listen.h"
 #import "Looking.h"
 #import "NSUserDefaults+RMSaveCustomObject.h"
+#import "HACLocationManager.h"
 
-@interface LoginViewController ()
+@interface LoginViewController (){
+     HACLocationManager *locationManager;
+}
 @property (weak, nonatomic) IBOutlet UIButton *fbLoginButton;
+
 
 @end
 
@@ -30,6 +34,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    locationManager = [HACLocationManager sharedInstance];
+    locationManager.timeoutUpdating = 6;
+    
+    NSLog(@"Last saved location: %@",locationManager.getLastSavedLocation);
     
     [self.fbLoginButton
      addTarget:self

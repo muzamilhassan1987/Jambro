@@ -1,0 +1,1 @@
+../../../HACLocationManager/LocationManager/HACLocationManager.h

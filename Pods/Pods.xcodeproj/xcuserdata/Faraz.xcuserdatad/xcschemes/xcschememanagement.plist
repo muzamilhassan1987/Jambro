@@ -9,17 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ALMoviePlayerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ActionSheetPicker-3.0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>DACircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>HACLocationManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -102,7 +102,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1B508871E4AC3E444C4EC3A3B70AAD25</key>
+		<key>1012D3D139EE91FF2A5876C9277CAE7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4767CACE1E049C31C9565F6498F72E5D</key>
+		<key>411A0D0B014AED7ACBED6096FF252737</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57C5ADC2910009AE87E6D7D273C7534D</key>
+		<key>549BEA5FD7ED2D1B8F8C0E3892A2E189</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6DD44DDB9033E8717D46DEC32C614BA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,7 +157,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F3DD7BE592189AC0DCB3176527BDC17</key>
+		<key>824D12645CAF7B531B0C07FFFC800796</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,17 +172,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A84C446946E5AD17C8C1D46F351E3125</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B102F209C1FA58D0EB9EA7852A3527E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B4BFCAED8666CF065135B14F8CF7FF02</key>
+		<key>BE97FB031561FB85A61A85E886C12F1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

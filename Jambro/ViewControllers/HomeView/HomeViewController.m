@@ -8,21 +8,41 @@
 
 #import "HomeViewController.h"
 #import "SelectionCollectionViewCell.h"
+#import "HACLocationManager.h"
 
 @interface HomeViewController ()
 {
     CGRect playCollectionViewFrame;
     CGRect listenCollectionViewFrame;
+    HACLocationManager *locationManager;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *playCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *listenCollectionView;
-
+@property (strong, nonatomic) NSArray * section_0;
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    locationManager = [HACLocationManager sharedInstance];
+    locationManager.timeoutUpdating = 6;
+    
+    NSLog(@"Last saved location: %@",locationManager.getLastSavedLocation);
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [locationManager LocationQuery];
+    
+    locationManager.locationUpdatedBlock = ^(CLLocation *location){
+        
+        
+        weakSelf.section_0 = @[[NSString stringWithFormat:@"Lat: %f - Lng: %f", location.coordinate.latitude, location.coordinate.longitude]];
+    };
+
+    
+    
     // Do any additional setup after loading the view.
 }
 
