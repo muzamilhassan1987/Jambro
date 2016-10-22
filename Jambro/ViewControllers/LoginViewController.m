@@ -15,6 +15,11 @@
 #import "Constants.h"
 #import "AppDelegate.h"
 #import "UtilitiesHelper.h"
+#import "Selection.h"
+#import "Play.h"
+#import "Listen.h"
+#import "Looking.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *fbLoginButton;
@@ -73,13 +78,42 @@
              
              NSString *deviceToken = [UserModel getUserDeviceToken];
              
+             NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+            Selection *selection = [defaults rm_customObjectForKey:@"Selection"];
+             
+             NSMutableArray * playArray = [NSMutableArray array];
+             NSMutableArray * listenArray = [NSMutableArray array];
+             NSMutableArray * lookingArray = [NSMutableArray array];
+             
+             for (Play*pl in selection.play) {
+                 if ([pl.selected boolValue]) {
+                     [playArray addObject:pl.name];
+                 }
+             }
+             for (Listen*li in selection.listen) {
+                 if ([li.selected boolValue]) {
+                     [listenArray addObject:li.name];
+                 }
+             }
+             for (Looking*lo in selection.looking) {
+                 if ([lo.selected boolValue]) {
+                     [lookingArray addObject:lo.name];
+                 }
+             }
+
+             NSString * playString = [playArray componentsJoinedByString:@","];
+             NSString * listenString = [listenArray componentsJoinedByString:@","];
+             NSString * lookingString = [lookingArray componentsJoinedByString:@","];
+             
+             
+             
              [User registerUser:@{@"email":(myEmail?myEmail:@"xxx@xxx.com"),
                                   @"facebookid":result[@"id"],
                                   @"userDeviceToken":(deviceToken?deviceToken:@"abc123"),
                                   @"name":result[@"name"],
-                                  @"play":@"",
-                                  @"listen":@"",
-                                  @"lookfor":@"",
+                                  @"play":playString,
+                                  @"listen":listenString,
+                                  @"lookfor":lookingString,
                                   @"bio":@"",
                                   @"lat":@"",
                                   @"lon":@"",
