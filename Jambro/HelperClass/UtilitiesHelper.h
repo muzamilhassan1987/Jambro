@@ -93,5 +93,6 @@
 +(NSString*)encodeEmojiTextwithText:(NSString*)emojiText;
 +(NSString*)decodeEmojiTextwithText:(NSString*)emojiText;
 
++(UIColor *) colorFromHexString:(NSString *)hexString;
 @end
 

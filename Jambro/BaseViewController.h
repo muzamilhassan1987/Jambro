@@ -26,4 +26,5 @@
 
 -(void)showTransparentNavBar;
 
+-(void)showNavigationBarWithBgImagename:(NSString*)imageName andLeftBarButtonItem:(UIButton*)leftBarButton andRightBarButtonArray:(NSArray*)rightBarButton andTitleText:(NSString*)title;
 @end

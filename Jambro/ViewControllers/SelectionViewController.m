@@ -143,7 +143,7 @@ alpha:1.0]
         playCV.bgView.clipsToBounds = YES;
         
         if ([playObject.selected boolValue]) {
-            UIColor * color = [self colorFromHexString:playObject.color];
+            UIColor * color = [UtilitiesHelper colorFromHexString:playObject.color];
             playCV.bgView.backgroundColor = color;
             playCV.bgView.alpha = 0.8;
         }
@@ -168,7 +168,7 @@ alpha:1.0]
         listenCV.bgView.clipsToBounds = YES;
         
         if ([listenObject.selected boolValue]) {
-            UIColor * color = [self colorFromHexString:listenObject.color];
+            UIColor * color = [UtilitiesHelper colorFromHexString:listenObject.color];
             listenCV.bgView.backgroundColor = color;
             listenCV.bgView.alpha = 0.8;
         }
@@ -192,7 +192,7 @@ alpha:1.0]
          lookingCV.bgView.clipsToBounds = YES;
          
          if ([lookingObject.selected boolValue]) {
-             UIColor * color = [self colorFromHexString:lookingObject.color];
+             UIColor * color = [UtilitiesHelper colorFromHexString:lookingObject.color];
              lookingCV.bgView.backgroundColor = color;
              lookingCV.bgView.alpha = 0.8;
          }
@@ -353,30 +353,6 @@ alpha:1.0]
          self.selectionCollectionView.alpha = 1.0;
      }];
 
-}
-
-
--(UIColor *) colorFromHexString:(NSString *)hexString {
-    NSString *cleanString = [hexString stringByReplacingOccurrencesOfString:@"#" withString:@""];
-    if([cleanString length] == 3) {
-        cleanString = [NSString stringWithFormat:@"%@%@%@%@%@%@",
-                       [cleanString substringWithRange:NSMakeRange(0, 1)],[cleanString substringWithRange:NSMakeRange(0, 1)],
-                       [cleanString substringWithRange:NSMakeRange(1, 1)],[cleanString substringWithRange:NSMakeRange(1, 1)],
-                       [cleanString substringWithRange:NSMakeRange(2, 1)],[cleanString substringWithRange:NSMakeRange(2, 1)]];
-    }
-    if([cleanString length] == 6) {
-        cleanString = [cleanString stringByAppendingString:@"ff"];
-    }
-    
-    unsigned int baseValue;
-    [[NSScanner scannerWithString:cleanString] scanHexInt:&baseValue];
-    
-    float red = ((baseValue >> 24) & 0xFF)/255.0f;
-    float green = ((baseValue >> 16) & 0xFF)/255.0f;
-    float blue = ((baseValue >> 8) & 0xFF)/255.0f;
-    float alpha = ((baseValue >> 0) & 0xFF)/255.0f;
-    
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 

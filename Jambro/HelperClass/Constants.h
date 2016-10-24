@@ -30,4 +30,5 @@
 @interface Constants : NSObject
 extern  NSString *const kWebBaseUrl;
 extern NSString *const kWebRegister;
+extern NSString *const kWebSearchMusian;
 @end

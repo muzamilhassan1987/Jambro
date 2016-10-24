@@ -116,10 +116,10 @@
 
 -(void)setTitleTextAttribute{
     if(APPC_IS_IPAD){
-        self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]],UITextAttributeTextColor,[UIFont boldSystemFontOfSize:24],UITextAttributeFont,nil];
+        self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back-arrow"]],UITextAttributeTextColor,[UIFont boldSystemFontOfSize:24],UITextAttributeFont,nil];
     }
     else{
-        self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]],UITextAttributeTextColor,[UIFont systemFontOfSize:17],UITextAttributeFont,nil];
+        self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back-arrow"]],UITextAttributeTextColor,[UIFont systemFontOfSize:17],UITextAttributeFont,nil];
     }
 }
 
@@ -149,7 +149,7 @@
     else{
         backButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 26)];
     }
-    [backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"back-arrow"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     backButton.exclusiveTouch = YES;
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:backButton];
@@ -238,5 +238,51 @@
     [self presentMoviePlayerViewControllerAnimated:self.objMoviePlayerViewController];
 }
 
+
+
+-(void)showNavigationBarWithBgImagename:(NSString*)imageName andLeftBarButtonItem:(UIButton*)leftBarButton andRightBarButtonArray:(NSArray*)rightBarButton andTitleText:(NSString*)title{
+    UIImage *navigationImage = [UIImage imageNamed:imageName];
+    
+    
+    UIView* navBarView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height, 64)];
+    
+    UIImageView* imageView = [[UIImageView alloc]initWithImage:navigationImage];
+    [imageView setFrame:CGRectMake(0.0,0.0, 320.0, navigationImage.size.height)];
+    NSLog(@"%@",NSStringFromCGSize(navigationImage.size));
+    [navBarView addSubview:imageView];
+    
+    if(rightBarButton){
+        for (UIButton* btn in rightBarButton){
+            [navBarView addSubview:btn];
+        }
+    }
+    
+    if(title){
+        UILabel* titleLbl;
+        //        CGSize labelSize = [title sizeWithFont:[UIFont systemFontOfSize:17]
+        //                             constrainedToSize:CGSizeMake(210, 30)
+        //                                 lineBreakMode:NSLineBreakByCharWrapping];
+        
+        titleLbl=[[UILabel alloc]initWithFrame:CGRectMake(60,25,200,30)];
+        
+        [titleLbl setText:title];
+        [titleLbl setTextColor:[UIColor whiteColor]];
+        [titleLbl setTextAlignment:NSTextAlignmentCenter];
+        [titleLbl setBackgroundColor:[UIColor clearColor]];
+        [navBarView addSubview:titleLbl];
+    }
+    
+    if(leftBarButton){
+        [navBarView addSubview:leftBarButton];
+    }
+    else{
+        UIButton* backButton=[[UIButton alloc]initWithFrame:CGRectMake(5, 22, 40, 40)];
+        [backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        [backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [navBarView addSubview:backButton];
+    }
+    
+    [self.view addSubview:navBarView];
+}
 
 @end

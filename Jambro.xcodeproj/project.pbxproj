@@ -73,6 +73,8 @@
 		D05110701DB39C82005F0B9A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D051104F1DB39C82005F0B9A /* UserModel.m */; };
 		D05110711DB39C82005F0B9A /* UtilitiesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D05110511DB39C82005F0B9A /* UtilitiesHelper.m */; };
 		D05110761DB39C8A005F0B9A /* ServiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D05110751DB39C8A005F0B9A /* ServiceModel.m */; };
+		D061045C1DBC164000B6B365 /* MusicianConcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = D06104591DBC164000B6B365 /* MusicianConcreate.m */; };
+		D061045D1DBC164000B6B365 /* SearchMusician.m in Sources */ = {isa = PBXBuildFile; fileRef = D061045B1DBC164000B6B365 /* SearchMusician.m */; };
 		D08AD8E51DB608F5003D4E01 /* BiosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08AD8E41DB608F5003D4E01 /* BiosViewController.m */; };
 		D08AD8E81DB60C9E003D4E01 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08AD8E71DB60C9E003D4E01 /* LoginViewController.m */; };
 		D08AD8FD1DB646CA003D4E01 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08AD8F91DB646CA003D4E01 /* Bolts.framework */; };
@@ -209,6 +211,10 @@
 		D05110511DB39C82005F0B9A /* UtilitiesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilitiesHelper.m; sourceTree = "<group>"; };
 		D05110741DB39C8A005F0B9A /* ServiceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceModel.h; sourceTree = "<group>"; };
 		D05110751DB39C8A005F0B9A /* ServiceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceModel.m; sourceTree = "<group>"; };
+		D06104581DBC164000B6B365 /* MusicianConcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicianConcreate.h; sourceTree = "<group>"; };
+		D06104591DBC164000B6B365 /* MusicianConcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicianConcreate.m; sourceTree = "<group>"; };
+		D061045A1DBC164000B6B365 /* SearchMusician.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchMusician.h; sourceTree = "<group>"; };
+		D061045B1DBC164000B6B365 /* SearchMusician.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchMusician.m; sourceTree = "<group>"; };
 		D08AD8E31DB608F5003D4E01 /* BiosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiosViewController.h; sourceTree = "<group>"; };
 		D08AD8E41DB608F5003D4E01 /* BiosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiosViewController.m; sourceTree = "<group>"; };
 		D08AD8E61DB60C9E003D4E01 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -383,6 +389,7 @@
 		D0510FFB1DB2CF11005F0B9A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				D06104571DBC163600B6B365 /* SearchMusicians */,
 				D04F4BFE1DBA3B88008CD903 /* User */,
 				D04F4BF11DBA39D3008CD903 /* Selection */,
 			);
@@ -544,6 +551,17 @@
 				D05110751DB39C8A005F0B9A /* ServiceModel.m */,
 			);
 			path = ServiceModel;
+			sourceTree = "<group>";
+		};
+		D06104571DBC163600B6B365 /* SearchMusicians */ = {
+			isa = PBXGroup;
+			children = (
+				D061045A1DBC164000B6B365 /* SearchMusician.h */,
+				D061045B1DBC164000B6B365 /* SearchMusician.m */,
+				D06104581DBC164000B6B365 /* MusicianConcreate.h */,
+				D06104591DBC164000B6B365 /* MusicianConcreate.m */,
+			);
+			path = SearchMusicians;
 			sourceTree = "<group>";
 		};
 		D08AD9131DB68D8D003D4E01 /* CustomCells */ = {
@@ -791,6 +809,7 @@
 				D05110651DB39C82005F0B9A /* NSDate+TCUtils.m in Sources */,
 				D0510FF91DB2CF02005F0B9A /* SelectionViewController.m in Sources */,
 				D05110631DB39C82005F0B9A /* OBGradientView.m in Sources */,
+				D061045C1DBC164000B6B365 /* MusicianConcreate.m in Sources */,
 				D051100A1DB39C13005F0B9A /* BaseViewController.m in Sources */,
 				D05110571DB39C82005F0B9A /* IQUIWindow+Hierarchy.m in Sources */,
 				D08AD8E81DB60C9E003D4E01 /* LoginViewController.m in Sources */,
@@ -831,6 +850,7 @@
 				D051106A1DB39C82005F0B9A /* UIImageView+ThumbImage.m in Sources */,
 				D08AD9161DB68DA5003D4E01 /* SelectionCollectionViewCell.m in Sources */,
 				D05110561DB39C82005F0B9A /* IQUIView+Hierarchy.m in Sources */,
+				D061045D1DBC164000B6B365 /* SearchMusician.m in Sources */,
 				D0510FFA1DB2CF02005F0B9A /* SplashViewController.m in Sources */,
 				D051106D1DB39C82005F0B9A /* UITextField+FontSize.m in Sources */,
 				D051106C1DB39C82005F0B9A /* UIPlaceHolderTextView.m in Sources */,

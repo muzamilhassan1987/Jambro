@@ -26,7 +26,8 @@
      HACLocationManager *locationManager;
 }
 @property (weak, nonatomic) IBOutlet UIButton *fbLoginButton;
-
+@property (nonatomic,retain) NSString *userLatitude;
+@property (nonatomic,retain) NSString *userLongitude;
 
 @end
 
@@ -38,11 +39,36 @@
     locationManager = [HACLocationManager sharedInstance];
     locationManager.timeoutUpdating = 6;
     
+    _userLatitude = [NSString stringWithFormat:@"%f",0.00];
+    _userLongitude = [NSString stringWithFormat:@"%f",0.00];
+    
+    
     NSLog(@"Last saved location: %@",locationManager.getLastSavedLocation);
+    CLLocation *userLocation = locationManager.getLastSavedLocation;
+    
+    _userLatitude = [NSString stringWithFormat:@"%f",userLocation.coordinate.latitude];
+    _userLongitude = [NSString stringWithFormat:@"%f",userLocation.coordinate.longitude];
+    
     
     [self.fbLoginButton
      addTarget:self
      action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    
+    [locationManager LocationQuery];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    locationManager.locationUpdatedBlock = ^(CLLocation *location){
+        NSLog(@"%@", location);
+        weakSelf.userLatitude = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
+        
+        weakSelf.userLongitude = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
+        
+    };
+    
+    NSLog(@"%@",weakSelf.userLatitude);
+     NSLog(@"%@",weakSelf.userLongitude);
+    
     // Do any additional setup after loading the view.
 }
 
@@ -124,8 +150,8 @@
                                   @"listen":listenString,
                                   @"lookfor":lookingString,
                                   @"bio":@"",
-                                  @"lat":@"",
-                                  @"lon":@"",
+                                  @"lat":_userLatitude,
+                                  @"lon":_userLongitude,
                                   @"picture":[NSString stringWithFormat:@"%@",url.absoluteString],
                                   @"gender":(myGender?myGender:@"male"),
                                   @"age":@"",
