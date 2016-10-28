@@ -47,6 +47,7 @@ PODS:
     - SocketRocket (~> 0.2)
   - SocketRocket (0.5.1)
   - SplunkMint-iOS (4.2)
+  - SZTextView (1.2.2)
   - UIAlertView+Blocks (0.9)
 
 DEPENDENCIES:
@@ -63,6 +64,7 @@ DEPENDENCIES:
   - RMMapper
   - socket.IO
   - SplunkMint-iOS
+  - SZTextView
   - UIAlertView+Blocks
 
 SPEC CHECKSUMS:
@@ -84,8 +86,9 @@ SPEC CHECKSUMS:
   socket.IO: eaaaea33481d8a81d8f78e331f0c72ba44758036
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SplunkMint-iOS: 058e5297f7cc8d335aea3dcaa8111eeb0f657371
+  SZTextView: 3a81174dce0710a9ab069bc73a813e6df53b9c82
   UIAlertView+Blocks: a46c99c5144f6c5dbc7d62fd2a0678daceec89a3
 
-PODFILE CHECKSUM: b53c8d849870e9a4cacf5a3840ff5c6cbe3008a2
+PODFILE CHECKSUM: 1c0e3701b5d53636d1d8f768b06a00e2f754643e
 
 COCOAPODS: 1.0.1

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DF6F0C312361527026D9CB0 /* Pods_Jambro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F3DB5A69E2A5F7CF9C6488 /* Pods_Jambro.framework */; };
 		D0282F201DB4D32400EDDA57 /* bass.wav in Resources */ = {isa = PBXBuildFile; fileRef = D0282F0E1DB4D32400EDDA57 /* bass.wav */; };
 		D0282F211DB4D32400EDDA57 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = D0282F0F1DB4D32400EDDA57 /* click.wav */; };
 		D0282F221DB4D32400EDDA57 /* drums.wav in Resources */ = {isa = PBXBuildFile; fileRef = D0282F101DB4D32400EDDA57 /* drums.wav */; };
@@ -88,12 +89,11 @@
 		D0EDA4391DB1017300BA1914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA4371DB1017300BA1914 /* Main.storyboard */; };
 		D0EDA43B1DB1017300BA1914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA43A1DB1017300BA1914 /* Assets.xcassets */; };
 		D0EDA43E1DB1017300BA1914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA43C1DB1017300BA1914 /* LaunchScreen.storyboard */; };
-		D74726603D46E7001E5E119C /* libPods-Jambro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8869E56055A91E8CCFF1027B /* libPods-Jambro.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2FB6A256B5C52FFA77F9231C /* Pods-Jambro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jambro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jambro/Pods-Jambro.release.xcconfig"; sourceTree = "<group>"; };
-		8869E56055A91E8CCFF1027B /* libPods-Jambro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jambro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F3DB5A69E2A5F7CF9C6488 /* Pods_Jambro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jambro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2526E6138ABAF751290955D /* Pods-Jambro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jambro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jambro/Pods-Jambro.debug.xcconfig"; sourceTree = "<group>"; };
 		D00C70F91DB51CB40087BB6A /* tutorial2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tutorial2.mp4; sourceTree = "<group>"; };
 		D00C70FA1DB537580087BB6A /* popeye.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = popeye.mp4; sourceTree = "<group>"; };
@@ -243,10 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D08AD9021DB64845003D4E01 /* FBSDKCoreKit.framework in Frameworks */,
-				D74726603D46E7001E5E119C /* libPods-Jambro.a in Frameworks */,
 				D08AD9041DB64B03003D4E01 /* FBSDKLoginKit.framework in Frameworks */,
 				D08AD9001DB646CA003D4E01 /* FBSDKShareKit.framework in Frameworks */,
 				D08AD8FD1DB646CA003D4E01 /* Bolts.framework in Frameworks */,
+				1DF6F0C312361527026D9CB0 /* Pods_Jambro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +260,7 @@
 				D08AD9011DB64845003D4E01 /* FBSDKCoreKit.framework */,
 				D08AD8F91DB646CA003D4E01 /* Bolts.framework */,
 				D08AD8FC1DB646CA003D4E01 /* FBSDKShareKit.framework */,
-				8869E56055A91E8CCFF1027B /* libPods-Jambro.a */,
+				38F3DB5A69E2A5F7CF9C6488 /* Pods_Jambro.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

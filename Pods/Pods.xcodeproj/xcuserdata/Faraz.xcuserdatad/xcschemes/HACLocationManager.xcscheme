@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '824D12645CAF7B531B0C07FFFC800796'
+               BlueprintIdentifier = '02FA8086FF29FB73EB67E94BBE567E6A'
                BlueprintName = 'HACLocationManager'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libHACLocationManager.a'>
+               BuildableName = 'HACLocationManager.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

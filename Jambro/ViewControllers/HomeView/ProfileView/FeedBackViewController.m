@@ -8,7 +8,10 @@
 
 #import "FeedBackViewController.h"
 #import "ServiceModel.h"
+#import "SZTextView.h"
+
 @interface FeedBackViewController ()
+@property (weak, nonatomic) IBOutlet SZTextView *textView;
 
 @end
 
@@ -17,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.textView.placeholder = @"Write a message.....";
+    self.textView.placeholderTextColor = [UIColor lightGrayColor];
+    self.textView.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0];
 }
 
 - (void)didReceiveMemoryWarning {

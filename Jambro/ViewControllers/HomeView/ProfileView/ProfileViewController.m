@@ -7,6 +7,8 @@
 //
 
 #import "ProfileViewController.h"
+#import "FeedBackViewController.h"
+#import "SelectionViewController.h"
 
 @interface ProfileViewController ()
 
@@ -22,6 +24,25 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)editProfileButtonClicked:(id)sender {
+    SelectionViewController * selectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectionViewController"];
+    [self.navigationController pushViewController:selectionVC animated:YES];
+}
+
+- (IBAction)settingButtonClicked:(id)sender {
+}
+
+- (IBAction)inviteButtonClicked:(id)sender {
+}
+
+- (IBAction)feedbackButtonClicked:(id)sender {
+    FeedBackViewController * feedbackVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedBackViewController"];
+    [self.navigationController pushViewController:feedbackVC animated:YES];
+}
+
+- (IBAction)changePhotoButtonClicked:(id)sender {
 }
 
 /*

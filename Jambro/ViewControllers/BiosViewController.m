@@ -10,8 +10,10 @@
 #import "HomeViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "SZTextView.h"
 
 @interface BiosViewController ()
+@property (weak, nonatomic) IBOutlet SZTextView *textView;
 
 @end
 
@@ -19,6 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.textView.placeholder = @"Your bio....";
+    self.textView.placeholderTextColor = [UIColor lightGrayColor];
+    self.textView.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0];
+    
     // Do any additional setup after loading the view.
 }
 

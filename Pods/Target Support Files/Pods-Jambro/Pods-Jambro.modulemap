@@ -1,0 +1,6 @@
+framework module Pods_Jambro {
+  umbrella header "Pods-Jambro-umbrella.h"
+
+  export *
+  module * { export * }
+}

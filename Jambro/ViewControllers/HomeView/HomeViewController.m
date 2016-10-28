@@ -20,6 +20,8 @@
 #import "ServiceModel.h"
 #import "UserModel.h"
 #import "UserConcreate.h"
+#import "FeedBackViewController.h"
+#import "ProfileViewController.h"
 
 @interface HomeViewController ()
 {
@@ -120,6 +122,10 @@
 -(void)profileButtonClicked:(id)sender
 {
     NSLog(@"Profile");
+    
+    ProfileViewController * feedbackVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+    [self.navigationController pushViewController:feedbackVC animated:YES];
+    
 }
 
 

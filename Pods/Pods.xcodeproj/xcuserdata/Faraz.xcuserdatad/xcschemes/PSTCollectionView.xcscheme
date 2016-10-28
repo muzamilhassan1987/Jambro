@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3B05906032A2B2D0ED2F0E16D10C03A5'
+               BlueprintIdentifier = 'EBCA56F36CD6E4C41EF2835CE6B0A192'
                BlueprintName = 'PSTCollectionView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPSTCollectionView.a'>
+               BuildableName = 'PSTCollectionView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

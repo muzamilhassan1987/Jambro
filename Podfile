@@ -3,7 +3,7 @@
 
 target 'Jambro' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+  use_frameworks!
 
   # Pods for Jambro
 
@@ -21,5 +21,5 @@ pod 'NMRangeSlider'
 pod 'ActionSheetPicker-3.0'
 pod 'JSQMessagesViewController'
 pod 'HACLocationManager'
-
+pod 'SZTextView'
 end
