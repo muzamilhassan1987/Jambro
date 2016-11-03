@@ -23,6 +23,7 @@
     BOOL isExclusiveTouchMethodCall;
 }
 @property(nonatomic,retain)UIButton *leftMenuButton;
+@property(nonatomic,retain) UIButton* backButton;
 @property (nonatomic,strong) NSMutableArray *photoCollection;
 @property (nonatomic,strong) MPMoviePlayerViewController *objMoviePlayerViewController;
 
@@ -142,17 +143,16 @@
 
 -(void)createBackButton{
     
-    UIButton* backButton;
     if (APPC_IS_IPAD) {
-        backButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 52, 52)];
+        self.backButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 52, 52)];
     }
     else{
-        backButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 26)];
+        self.backButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 26)];
     }
-    [backButton setImage:[UIImage imageNamed:@"back-arrow"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    backButton.exclusiveTouch = YES;
-    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:backButton];
+    [self.backButton setImage:[UIImage imageNamed:@"back-arrow"] forState:UIControlStateNormal];
+    [self.backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.backButton.exclusiveTouch = YES;
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:self.backButton];
 }
 
 -(void)backButtonClicked:(id)sender{
@@ -178,6 +178,13 @@
     
     self.navigationItem.leftBarButtonItems =[NSArray arrayWithObjects:leftMenuBar, nil];
 }
+
+
+-(void)hideBackButton
+{
+    self.backButton.hidden = YES;
+}
+
 
 -(void)hideLeftMenuButton
 {

@@ -22,6 +22,7 @@
 #import "UserConcreate.h"
 #import "FeedBackViewController.h"
 #import "ProfileViewController.h"
+#import "MatchRequestController.h"
 
 @interface HomeViewController ()
 {
@@ -37,6 +38,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userDistanceLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *playCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *listenCollectionView;
+@property (weak, nonatomic) IBOutlet UIView *noDataView;
 
 @end
 
@@ -59,31 +61,50 @@
     UIBarButtonItem * profileItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"profile-icon"]]];
     self.navigationItem.leftBarButtonItem = profileItem;*/
 
-    
-    
+   
+    // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+     [self searchMusicians];
+}
+
+-(void)searchMusicians
+{
     playArray = [NSArray array];
     listenArray = [NSArray array];
     musicianArray = [NSMutableArray array];
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     selection = [defaults rm_customObjectForKey:@"Selection"];
     
-    [SearchMusician searchMusician:@{@"facebookid": @"987654321000111111"} withURLStr:kWebSearchMusian  onView:self.view response:^(SearchMusician *objUser, NSError *error) {
+    [SearchMusician searchMusician:@{@"facebookid": [UserModel sharedInstance].getUserData.facebookid} withURLStr:kWebSearchMusian  onView:self.view response:^(SearchMusician *objUser, NSError *error) {
         if (!error) {
+            if (objUser) {
+                self.noDataView.hidden = YES;
             musicianArray = (NSMutableArray*)objUser.musician;
             musicianArray = [self createMutableArray1:musicianArray];
             
             [self setDataForMusician];
             
+            }
+            else
+            {
+                 self.noDataView.hidden = NO;
+            }
         }
         else
         {
+            self.noDataView.hidden = NO;
+            
+//            [UtilitiesHelper showErrorAlert:error];
             NSLog(@"%@",error);
         }
     }];
     
-    // Do any additional setup after loading the view.
-}
 
+}
 
 
 -(void)createLeftBarButton
@@ -117,6 +138,9 @@
 -(void)matchesButtonClicked:(id)sender
 {
     NSLog(@"Matches");
+    
+    MatchRequestController *matches = [self.storyboard instantiateViewControllerWithIdentifier:@"MatchRequestController"];
+    [self.navigationController pushViewController:matches animated:YES];
 }
 
 -(void)profileButtonClicked:(id)sender
@@ -257,7 +281,11 @@
 }
 
 - (IBAction)dislikeButtonClicked:(id)sender {
-    [[ServiceModel sharedClient]POST:@"dislikePerson" parameters:@{@"userfbid":@"",@"friendfbid":@""} onView:self.view success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    MusicianConcreate * musician = musicianArray[0];
+    
+    
+    [[ServiceModel sharedClient]POST:@"dislikePerson" parameters:@{@"userfbid":[UserModel sharedInstance].getUserData.facebookid,@"friendfbid":musician.facebookid} onView:self.view success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@",responseObject);
         [musicianArray removeObjectAtIndex:0];
         [self setDataForMusician];
@@ -282,7 +310,7 @@
         _userProfileImageView.layer.borderWidth = 3.0f;
         _userProfileImageView.layer.borderColor = [UIColor redColor].CGColor;
         
-    [_userProfileImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",musician.picture]] placeholderImage:[UIImage imageNamed:@""]];
+    [_userProfileImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",musician.picture]] placeholderImage:[UIImage imageNamed:@"Placeholder"]];
     
     playArray = [musician.play componentsSeparatedByString:@","];
     listenArray = [musician.listen componentsSeparatedByString:@","];
@@ -293,6 +321,8 @@
     }
     else
     {
+        
+         self.noDataView.hidden = NO;
         NSLog(@"Show Error");
     }
 }
@@ -303,6 +333,14 @@
 }
 
 
+- (IBAction)refreshHomeViewAgain:(id)sender {
+    self.noDataView.hidden = YES;
+    [self searchMusicians];
+}
+
+
+- (IBAction)inviteYourFriendsButtonClicked:(id)sender {
+}
 
 /*
 #pragma mark - Navigation

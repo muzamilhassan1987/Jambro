@@ -25,5 +25,16 @@
                                onView:(UIView *)loaderOnView
                              response:(void (^)(User *objUser,NSError *error))block;
 
++(AFHTTPRequestOperation *) updateUserProfileImage:(NSDictionary *)params
+                              withURLStr:(NSString *)urlPath
+                                imageData:(NSData *) image
+                                imageParamaterName:(NSString *) imageParam
+                                  onView:(UIView *)loaderOnView
+                                response:(void (^)(User *objUser,NSError *error))block;
+
++(AFHTTPRequestOperation *) updateUser:(NSDictionary *)params
+                              withURLStr:(NSString *)urlPath
+                                  onView:(UIView *)loaderOnView
+                                response:(void (^)(User *objUser,NSError *error))block;
 
 @end

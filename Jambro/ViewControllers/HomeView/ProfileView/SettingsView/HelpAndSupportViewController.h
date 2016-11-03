@@ -6,8 +6,8 @@
 //  Copyright © 2016 Faraz Haider. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface HelpAndSupportViewController : UIViewController
+@interface HelpAndSupportViewController : BaseViewController
 
 @end

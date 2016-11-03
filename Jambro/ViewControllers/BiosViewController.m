@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "SZTextView.h"
+#import "UserModel.h"
+#import "ProfileViewController.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
 
 @interface BiosViewController ()
 @property (weak, nonatomic) IBOutlet SZTextView *textView;
@@ -21,6 +24,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self hideBackButton];
+    
+    UIImage* logoImage = [UIImage imageNamed:@"profile-icon"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoImage];
+
+    
     self.textView.placeholder = @"Your bio....";
     self.textView.placeholderTextColor = [UIColor lightGrayColor];
     self.textView.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0];
@@ -36,33 +46,64 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    self.navigationController.navigationBar.hidden = TRUE;
+//    self.navigationController.navigationBar.hidden = TRUE;
 }
 
 
 - (IBAction)addBiosButtonClicked:(id)sender {
-//        [self moveToNextViewController:YES];
     
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults rm_setCustomObject:self.textView.text forKey:@"Bios"];
+    
+    
+    
+    if ([[UserModel sharedInstance]checkUserData]) {
+        [self moveToProfileScreen];
+    }
+    else{
+        [self moveToLoginView];
+    }
+}
+
+- (IBAction)skipButtonClicked:(id)sender {
+    if ([[UserModel sharedInstance]checkUserData]) {
+        [self moveToProfileScreen];
+    }
+    else{
+        [self moveToLoginView];
+    }
+}
+
+
+-(void)moveToLoginView
+{
     LoginViewController * loginVC =[self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     [self.navigationController pushViewController:loginVC animated:YES];
 }
 
-- (IBAction)skipButtonClicked:(id)sender {
-    [self moveToNextViewController:YES];
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:YES];    // it shows
 }
 
 
--(void)moveToNextViewController:(BOOL)isFirstTime
+-(void)moveToProfileScreen
 {
-    if (isFirstTime) {
-        AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [appdelegate makeHomeRootView];
+    UIViewController *exitViewController = nil;
+    NSArray *viewControllers = [[self navigationController] viewControllers];
+    for( int i=0;i<[viewControllers count];i++){
+        id obj=[viewControllers objectAtIndex:i];
+        if([obj isKindOfClass:[ProfileViewController class]]){
+            exitViewController = obj;
+            break;
+        }
     }
-    else
-    {
-        [self.navigationController popToRootViewControllerAnimated:YES];
+    if (exitViewController != nil) {
+        [[self navigationController] popToViewController:exitViewController animated:YES];
     }
 }
+
 
 /*
 #pragma mark - Navigation

@@ -30,7 +30,9 @@ alpha:1.0]
     int indexOfPage;
     Selection *selection;
 }
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *selectionCollectionView;
+@property (nonatomic,retain)NSArray *titleArray;
 @end
 
 @implementation SelectionViewController
@@ -39,7 +41,12 @@ alpha:1.0]
     [super viewDidLoad];
     collectionViewFrame = CGRectZero;
     indexOfPage = 1;
+    
 //    NSLog(@"%@",[self getJsonDataFromFile]);
+    
+    self.titleArray = @[@"I Play",@"I LISTEN TO",@"I'M LOOKING FOR SOMEONE WHO PLAYS"];
+    
+    self.titleLabel.text = self.titleArray[indexOfPage-1];
     
     [[SoundManager sharedManager] prepareToPlay];
     
@@ -69,11 +76,13 @@ alpha:1.0]
     // Do any additional setup after loading the view.
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:YES];
-    self.navigationController.navigationBar.hidden = TRUE;
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];   //it hides
 }
+
+
+
 
 -(void)viewDidLayoutSubviews
 {
@@ -87,7 +96,7 @@ alpha:1.0]
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-     self.navigationController.navigationBar.hidden = FALSE;
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 -(void)viewWillLayoutSubviews
@@ -315,6 +324,8 @@ alpha:1.0]
         [self.navigationController pushViewController:biosVC animated:YES];
         return;
     }
+    
+    
      self.selectionCollectionView.alpha = 0;
     
     [self.selectionCollectionView reloadData];
@@ -328,6 +339,8 @@ alpha:1.0]
       
     } completion:^(BOOL finished)
      {
+           self.titleLabel.text = self.titleArray[indexOfPage-1];
+         
          self.selectionCollectionView.alpha = 1.0;
      }];
 
@@ -350,6 +363,7 @@ alpha:1.0]
          [self.selectionCollectionView.collectionViewLayout invalidateLayout];
     } completion:^(BOOL finished)
      {
+           self.titleLabel.text = self.titleArray[indexOfPage-1];
          self.selectionCollectionView.alpha = 1.0;
      }];
 

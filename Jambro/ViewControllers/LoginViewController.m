@@ -22,6 +22,7 @@
 #import "NSUserDefaults+RMSaveCustomObject.h"
 #import "HACLocationManager.h"
 
+
 @interface LoginViewController (){
      HACLocationManager *locationManager;
 }
@@ -66,11 +67,27 @@
         
     };
     
+    
+    locationManager.locationErrorBlock = ^(NSError *error){
+        NSLog(@"%@", error);
+        
+        _userLatitude = [NSString stringWithFormat:@"%f",0.00];
+        _userLongitude = [NSString stringWithFormat:@"%f",0.00];
+    };
+    
     NSLog(@"%@",weakSelf.userLatitude);
      NSLog(@"%@",weakSelf.userLongitude);
     
     // Do any additional setup after loading the view.
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    self.navigationController.navigationBar.hidden = TRUE;
+}
+
+
 
 -(void)loginButtonClicked
 {
@@ -86,6 +103,8 @@
          } else {
              NSLog(@"Logged in");
              
+             
+             
              [self getUserInfo];
          }
      }];
@@ -94,6 +113,9 @@
 
 -(void)getUserInfo
 {
+    
+    [UtilitiesHelper showLoader:@"Loading.." forView:self.view setMode:MBProgressHUDModeIndeterminate delegate:nil];
+    
     NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
     [parameters setValue:@"id,name,email,picture,gender" forKey:@"fields"];
     
@@ -106,9 +128,10 @@
          
          
          if (!error) {
+                [UtilitiesHelper hideLoader:self.view];
              NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
              
-             NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=normal",result[@"id"]]];
+             NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large",result[@"id"]]];
              //             NSData  *data = [NSData dataWithContentsOfURL:url];
              
              NSString *deviceToken = [UserModel getUserDeviceToken];
@@ -140,8 +163,6 @@
              NSString * listenString = [listenArray componentsJoinedByString:@","];
              NSString * lookingString = [lookingArray componentsJoinedByString:@","];
              
-             
-             
              [User registerUser:@{@"email":(myEmail?myEmail:@"xxx@xxx.com"),
                                   @"facebookid":result[@"id"],
                                   @"userDeviceToken":(deviceToken?deviceToken:@"abc123"),
@@ -149,9 +170,9 @@
                                   @"play":playString,
                                   @"listen":listenString,
                                   @"lookfor":lookingString,
-                                  @"bio":@"",
-                                  @"lat":_userLatitude,
-                                  @"lon":_userLongitude,
+                                  @"bio":[defaults rm_customObjectForKey:@"Bios"],
+                                  @"lat":(_userLatitude?_userLatitude:@"0.0"),
+                                  @"lon":(_userLongitude?_userLongitude:@"0.0"),
                                   @"picture":[NSString stringWithFormat:@"%@",url.absoluteString],
                                   @"gender":(myGender?myGender:@"male"),
                                   @"age":@"",
@@ -179,11 +200,11 @@
 }
 
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:YES];
-    self.navigationController.navigationBar.hidden = TRUE;
-}
+//-(void)viewDidDisappear:(BOOL)animated
+//{
+//    [super viewDidDisappear:YES];
+//    self.navigationController.navigationBar.hidden = TRUE;
+//}
 
 //-(void)viewWillDisappear:(BOOL)animated
 //{

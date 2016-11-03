@@ -79,4 +79,57 @@
 
 
 
++(AFHTTPRequestOperation *) updateUserProfileImage:(NSDictionary *)params
+                                        withURLStr:(NSString *)urlPath
+                                         imageData:(NSData *) image
+                                imageParamaterName:(NSString *) imageParam
+                                            onView:(UIView *)loaderOnView
+                                          response:(void (^)(User *objUser,NSError *error))block
+{
+   return  [[ServiceModel sharedClient]POST:urlPath parameters:params imageData:image imageParamaterName:imageParam onView:loaderOnView success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            if (responseObject) {
+                
+                User* objUser = [User instanceFromDictionary:responseObject];
+                block (objUser, nil);
+            }
+            
+        
+//        NSLog(@"Feedback shared");
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            block (nil, error);
+            
+        }];
+}
+
+
+
++(AFHTTPRequestOperation *) updateUser:(NSDictionary *)params
+                            withURLStr:(NSString *)urlPath
+                                onView:(UIView *)loaderOnView
+                              response:(void (^)(User *objUser,NSError *error))block
+{
+    
+    NSLog(@"my dic %@",params);
+    
+    return [[ServiceModel sharedClient] POST:urlPath
+                                  parameters:params
+                                      onView:loaderOnView
+                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                         
+                                         if (responseObject) {
+                                             
+                                             User* objUser = [User instanceFromDictionary:responseObject];
+                                             block (objUser, nil);
+                                         }
+                                         
+                                         
+                                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                         
+                                         block (nil, error);
+                                         
+                                     }];
+}
+
+
 @end

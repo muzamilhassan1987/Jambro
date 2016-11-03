@@ -31,4 +31,11 @@
 extern  NSString *const kWebBaseUrl;
 extern NSString *const kWebRegister;
 extern NSString *const kWebSearchMusian;
+extern NSString *const kWebFriendList;
+extern NSString *const kWebPendingRequest;
+extern NSString *const kWebRejectFriend;
+extern NSString *const kWebAcceptFriend;
+extern NSString *const kWebRemoveFriend;
+extern NSString *const kWebGetChat;
+extern NSString *const kWebSendChat;
 @end

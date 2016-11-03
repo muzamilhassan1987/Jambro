@@ -22,4 +22,5 @@ pod 'ActionSheetPicker-3.0'
 pod 'JSQMessagesViewController'
 pod 'HACLocationManager'
 pod 'SZTextView'
+
 end

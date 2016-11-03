@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setTitleViewWithTitle:@"HELP & SUPPORT"];
     // Do any additional setup after loading the view.
 }
 

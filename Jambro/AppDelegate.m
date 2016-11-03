@@ -10,6 +10,8 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "UserModel.h"
 #import "HACLocationManager.h"
+#import "MPNotificationView.h"
+#import "ChatViewController.h"
 //cccc
 
 @interface AppDelegate ()
@@ -74,11 +76,80 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
+//    for (NSString* family in [UIFont familyNames])
+//    {
+//        NSLog(@"%@", family);
+//        
+//        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+//        {
+//            NSLog(@"  %@", name);
+//        }
+//    }
+    
+
+    [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+    
+    [application registerForRemoteNotifications];
     
     [[HACLocationManager sharedInstance]requestAuthorizationLocation];
     
     return YES;
 }
+
+
+
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *strDeviceToken = [[[[[deviceToken description]stringByReplacingOccurrencesOfString: @"<" withString: @""] stringByReplacingOccurrencesOfString: @">" withString: @""]stringByReplacingOccurrencesOfString:@" " withString: @""]copy];
+    NSLog(@"Push %@",strDeviceToken);
+    
+    [UserModel saveDeviceToken:strDeviceToken];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+    NSLog(@"Failed to get token, error: %@", error);
+    [UserModel saveDeviceToken:@"111"];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    //register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    NSLog(@" this is me %@",userInfo);
+    
+    NSString *messageType = [userInfo valueForKey:@"type"];
+    
+    
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        
+        if ([((UINavigationController*)self.window.rootViewController).visibleViewController isKindOfClass:[ChatViewController class]]) {
+            return;
+        }
+        
+        NSString *message = [[userInfo valueForKey:@"aps"] valueForKey:@"alert"];
+        
+        
+        [MPNotificationView notifyWithText:@"Jambro" detail:message image:[UIImage imageNamed:@"AppIcon"] duration:0.7 type:@"" andTouchBlock:^(MPNotificationView *view) {
+            
+        }];
+        
+        
+
+        
+    }
+    NSLog(@"Im in this %@",((UINavigationController*)self.window.rootViewController).visibleViewController);
+    
+}
+
 
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url

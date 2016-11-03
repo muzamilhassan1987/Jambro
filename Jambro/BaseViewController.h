@@ -17,6 +17,9 @@
 -(void)setTitleViewWithTitle:(NSString*)title;
 -(void)createBackButton;
 
+-(void)hideBackButton;
+
+
 - (void)showLeftMenuPressed:(id)sender;
 - (void)showRightMenuPressed:(id)sender;
 

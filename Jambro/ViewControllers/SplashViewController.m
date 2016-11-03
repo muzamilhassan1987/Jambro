@@ -17,29 +17,45 @@
 
 
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"splash" ofType:@"mp4"];
     NSURL *url = [NSURL fileURLWithPath:path];
     
-    AVPlayer *av = [[AVPlayer alloc] initWithURL:url];
+//    AVPlayer *av = [[AVPlayer alloc] initWithURL:url];
+//    
+//    av.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(playerItemDidReachEnd:)
+//                                                 name:AVPlayerItemDidPlayToEndTimeNotification
+//                                               object:[av currentItem]];
+//    
+//    AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:av];
+//    
+//    [layer setFrame:self.view.frame];
+//    
+//    [self.view.layer addSublayer:layer];
+//    
+//    [av play];
+
     
-    av.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+    AVAsset *avAsset = [AVAsset assetWithURL:url];
+    AVPlayerItem *avPlayerItem =[[AVPlayerItem alloc]initWithAsset:avAsset];
+    AVPlayer *avPlayer = [[AVPlayer alloc]initWithPlayerItem:avPlayerItem];
+    AVPlayerLayer *avPlayerLayer =[AVPlayerLayer playerLayerWithPlayer:avPlayer];
+    [avPlayerLayer setFrame:self.view.frame];
+    [self.view.layer addSublayer:avPlayerLayer];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(playerItemDidReachEnd:)
-                                                 name:AVPlayerItemDidPlayToEndTimeNotification
-                                               object:[av currentItem]];
-    
-    AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:av];
-    
-    [layer setFrame:self.view.frame];
-    
-    [self.view.layer addSublayer:layer];
-    
-    [av play];
-
+                                                  selector:@selector(playerItemDidReachEnd:)
+                                                      name:AVPlayerItemDidPlayToEndTimeNotification
+                                                    object:[avPlayer currentItem]];
+    //[avPlayerLayer setBackgroundColor:[[UIColor redColor]CGColor]];
+    [avPlayer seekToTime:kCMTimeZero];
+    [avPlayer play];
     
 }
 

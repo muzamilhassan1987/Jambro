@@ -48,7 +48,7 @@
         }
         else
         {
-            NSDictionary *errorDictionary = [NSDictionary dictionaryWithObject:[responseObject valueForKey:@"Message"] forKey:NSLocalizedDescriptionKey];
+            NSDictionary *errorDictionary = [NSDictionary dictionaryWithObject:[responseObject valueForKey:@"message"] forKey:NSLocalizedDescriptionKey];
             
             NSError *error =[[NSError alloc]initWithDomain:@"Server Message" code:0 userInfo:errorDictionary];
             
@@ -93,7 +93,7 @@
         }
         else
         {
-            NSDictionary *errorDictionary = [NSDictionary dictionaryWithObject:[responseObject valueForKey:@"Message"] forKey:NSLocalizedDescriptionKey];
+            NSDictionary *errorDictionary = [NSDictionary dictionaryWithObject:[responseObject valueForKey:@"message"] forKey:NSLocalizedDescriptionKey];
             
             NSError *error =[[NSError alloc]initWithDomain:@"Server Message" code:0 userInfo:errorDictionary];
             
@@ -360,15 +360,15 @@
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        if ([[responseObject valueForKey:@"Response"] isEqualToString:@"Success"]) {
-            
+        
+        if ([[NSString stringWithFormat:@"%@",[responseObject valueForKey:@"status"]]isEqualToString:@"1"]) {
             [UtilitiesHelper hideLoader:loaderOnView];
             success(operation,responseObject);
             
         }
-        else {
-            
-            NSDictionary *errorDictionary = [NSDictionary dictionaryWithObject:[responseObject valueForKey:@"Message"] forKey:NSLocalizedDescriptionKey];
+        else
+        {
+            NSDictionary *errorDictionary = [NSDictionary dictionaryWithObject:[responseObject valueForKey:@"message"] forKey:NSLocalizedDescriptionKey];
             
             NSError *error =[[NSError alloc] initWithDomain:@"Server Message" code:0 userInfo:errorDictionary];
             
